@@ -14,9 +14,7 @@
             echo "All fields are required";
         }else { 
 
-
-
-            $stmt = $pdo->prepare('SELECT * FROM users WHERE email = :email AND password=:password');
+            $stmt = $pdo->prepare('SELECT * FROM users WHERE email = :email AND password = :password');
             $stmt->execute(['email' => $email, 'password' => sha1($password)]);            
 
             $user = $stmt->fetch();
@@ -25,7 +23,7 @@
 
             if ($user) {
                 $_SESSION['user'] = $email;
-                echo "user not found.";
+                header('Location: index.php'); 
             } else {
                 echo "user not found.";
             }            
