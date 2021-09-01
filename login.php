@@ -11,18 +11,12 @@
             echo "All fields are required";
         }else { 
 
-            die('logged in');
 
-            $sql = 'SELECT * 
-            FROM users
-            WHERE email = :email
-            AND password = :password';
-    
-            $statement = $pdo->prepare($sql);
-            $statement->bindParam(':email', $email, PDO::PARAM_INT);
-            $statement->bindParam(':password', sha1($password), PDO::PARAM_INT);
-            $statement->execute();
-            $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+            $stmt = $pdo->prepare('SELECT * FROM users WHERE email = :email AND password=:password');
+            $stmt->execute(['email' => $email, 'password' => sha1($password)]);            
+
+            $user = $stmt->fetch();
             
             if ($user) {
                 $_SESSION['user'] = $email;
