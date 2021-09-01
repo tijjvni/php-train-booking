@@ -36,7 +36,7 @@
     }
 ?>
 
-<form action="post" action="login.php">
+<form method="post" action="login.php">
     <input type="email" placeholder="email" name="email"/>
     <input type="password" placeholder="password" name="password"/>
 

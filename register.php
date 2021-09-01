@@ -33,7 +33,7 @@
     }
 
 ?>
-<form action="post" action="register.php"> 
+<form method="post" action="register.php"> 
     <input type="text" placeholder="first name" name="first_name"/>
     <input type="text" placeholder="last name" name="first_name"/>
     <input type="email" placeholder="email" name="email"/>
