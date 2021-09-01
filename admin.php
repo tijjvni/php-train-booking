@@ -1,12 +1,8 @@
 <?php
     $pdo = require 'connect.php';
 
-    authenticate();
-
-    if(!$user['is_admin']){
-        header('Location: index.php'); 
-    }    
-
+    $user = authenticate();
+    adminPage($user);
     
 ?>
 
