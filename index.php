@@ -1,7 +1,7 @@
 <?php
     
-    require 'connect.php';
+    $pdo = require_once 'connect.php';
 
-    authenticate();
+    // authenticate();
 
     print_r($pdo);

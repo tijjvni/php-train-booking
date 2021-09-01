@@ -14,24 +14,12 @@
         ];
 
         try {
-            $pdo = new PDO($dsn, $user, $password, $options);
+            return $pdo = new PDO($dsn, $user, $password, $options);
         } catch (\PDOException $e) {
             throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
 
     }
 
-    connect($host, $db, $user, $password);
-
-    function authenticate()
-    {
-        if(!isset($_SESSION['user'])){
-            header('Location: login.php'); 
-        }
-
-        $statement = $pdo->prepare($sql);
-        $statement->bindParam(':email', $_SESSION['user'], PDO::PARAM_INT);
-        $statement->execute();
-        return $user = $statement->fetch(PDO::FETCH_ASSOC);
-    }
+    return connect($host, $db, $user, $password);
 
