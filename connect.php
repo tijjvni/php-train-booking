@@ -23,7 +23,7 @@
         $statement = $pdo->prepare($sql);
         $statement->bindParam(':email', $_SESSION['user'], PDO::PARAM_INT);
         $statement->execute();
-        $user = $statement->fetch(PDO::FETCH_ASSOC);
+        return $user = $statement->fetch(PDO::FETCH_ASSOC);
     }
 
     connect($host, $db, $user, $password);
