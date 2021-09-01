@@ -6,6 +6,6 @@
 
     // $user = authenticate();
 ?>
-    <a href="logout">logout</a>
+    <a href="logout.php">logout</a>
 <?php
     print_r($_SESSION['user']);
