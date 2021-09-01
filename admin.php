@@ -188,20 +188,9 @@
                 ?>
                 </select>
             </p>
-                <p>
-                    <span>To</span>
-                    <select name="to">
-                    <?php
-                        foreach($locations as $location){
-                            ?>
-                                <option value="<?php echo $location['id'] ?>"><?php echo $location['name'] ?></option>
-                            <?php
-                        }
-                    ?>
-                    </select>
-                </p>
-
-                <select name="from">
+            <p>
+                <span>To</span>
+                <select name="to">
                 <?php
                     foreach($locations as $location){
                         ?>
@@ -210,6 +199,8 @@
                     }
                 ?>
                 </select>
+            </p>
+
             <input type="submit" value="submit" name="addRoute"/>
             <?php
         }else {
