@@ -4,8 +4,8 @@
     
     require_once('functions.php');
 
-    $user = authenticate();
+    $user = authenticate($_SESSION['user']);
 ?>
     <a href="logout.php">logout</a>
 <?php
-    print_r($_SESSION['user']);
+    print_r($user);
