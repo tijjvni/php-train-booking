@@ -18,7 +18,7 @@
 
      function adminPage($user) 
      {
-        if($user['is_admin']){
+        if(!$user['is_admin']){
             header('Location: index.php'); 
         }
      }
