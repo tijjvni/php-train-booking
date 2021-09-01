@@ -14,14 +14,14 @@
         ];
 
         try {
-            $pdo = new PDO($dsn, $user, $password, $options);
+            return $pdo = new PDO($dsn, $user, $password, $options);
         } catch (\PDOException $e) {
             throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
 
     }
 
-    connect($host, $db, $user, $password);
+    return connect($host, $db, $user, $password);
 
 
 

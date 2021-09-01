@@ -1,5 +1,8 @@
 <?php
-    $pdo = require 'connect.php';
+    
+    $pdo = require_once 'connect.php';
+    
+    require 'functions.php';
 
     // login user
     if( isset($_POST['submit']) && !empty($_POST['submit']) ){
