@@ -26,4 +26,4 @@
         $user = $statement->fetch(PDO::FETCH_ASSOC);
     }
 
-    return connect($host, $db, $user, $password);
+    connect($host, $db, $user, $password);
