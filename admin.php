@@ -92,13 +92,13 @@
         }else { 
 
             // insert route
-            $sql = 'INSERT INTO routes(to,from) VALUES(:to,:from)';
+            $sql = 'INSERT INTO routes(from,to) VALUES(:from,:to)';
 
             $statement = $pdo->prepare($sql);
 
             $statement->execute([
-                ':to' => $to,
-                ':from' => $from
+                ':from' => $from,
+                ':to' => $to
             ]);
 
 
