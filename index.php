@@ -4,6 +4,6 @@
     
     require_once('functions.php');
 
-    // authenticate();
+    // $user = authenticate();
 
-    print_r($user);
+    print_r($_SESSION['user']);

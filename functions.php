@@ -6,8 +6,10 @@
              header('Location: login.php'); 
          }
  
-         $statement = $pdo->prepare($sql);
-         $statement->bindParam(':email', $_SESSION['user'], PDO::PARAM_INT);
-         $statement->execute();
-         return $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+         $stmt = $pdo->prepare('SELECT * FROM users WHERE email = :email');
+         $stmt->execute(['email' => $_SESSION['user']]);            
+
+         return $user = $stmt->fetch();         
+
      }
