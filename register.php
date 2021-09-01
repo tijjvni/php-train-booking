@@ -35,7 +35,7 @@
 ?>
 <form method="post" action="register.php"> 
     <input type="text" placeholder="first name" name="first_name"/>
-    <input type="text" placeholder="last name" name="first_name"/>
+    <input type="text" placeholder="last name" name="last_name"/>
     <input type="email" placeholder="email" name="email"/>
     <input type="password" placeholder="password" name="password"/>
 
