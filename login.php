@@ -11,6 +11,7 @@
             echo "All fields are required";
         }else { 
 
+            die('logged in');
 
             $sql = 'SELECT * 
             FROM users
@@ -25,7 +26,6 @@
             
             if ($user) {
                 $_SESSION['user'] = $email;
-                die('logged in');
                 header('Location: index.php'); 
             } else {
                 echo "user not found.";
