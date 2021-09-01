@@ -13,7 +13,8 @@
          $user = $stmt->fetch();   
          
          print_r($user);
-
+         die();
+         
          return $user;
 
      }
