@@ -95,11 +95,9 @@
             $sql = 'INSERT INTO routes(from,to) VALUES(:from,:to)';
 
             $statement = $pdo->prepare($sql);
+              
+            $statement->execute(['from' => $email, 'to' => $to]);
 
-            $statement->execute([
-                ':from' => $from,
-                ':to' => $to
-            ]);
 
 
             echo 'Route added successfully.';            
@@ -122,10 +120,7 @@
 
             $statement = $pdo->prepare($sql);
 
-            $statement->execute([
-                ':route' => $route,
-                ':coach' => $coach
-            ]);
+            $statement->execute(['route' => $route, 'coach' => $coach]);
 
 
             echo 'Route Coach added successfully.';            
