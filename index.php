@@ -8,4 +8,4 @@
 ?>
     <a href="logout.php">logout</a>
 <?php
-    print_r($user);
+
