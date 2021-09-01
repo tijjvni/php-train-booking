@@ -4,7 +4,7 @@
     
     // require_once('functions.php');
 
-    // $user = authenticate();
+    $user = authenticate();
 ?>
     <a href="logout.php">logout</a>
 <?php
