@@ -1,7 +1,8 @@
 <?php
-    $pdo = require 'connect.php';
+    $pdo = require_once 'connect.php';
+    require_once('functions.php');
 
-    $user = authenticate();
+    $user = authenticate($pdo);
     adminPage($user);
     
 ?>
