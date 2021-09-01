@@ -1,5 +1,5 @@
 <?php
-    // $pdo = require 'connect.php';
+    $pdo = require 'connect.php';
 
     // authenticate();
 
