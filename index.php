@@ -1,4 +1,3 @@
 <?php
-$pdo = require 'connect.php';
-
-var_dump($pdo);
+    $pdo = require 'connect.php';
+    authenticate();

@@ -14,4 +14,11 @@
         }
     }
 
+    function authenticate()
+    {
+        if(!isset($_SESSION['user'])){
+            header('Location: login.php'); 
+        }
+    }
+
     return connect($host, $db, $user, $password);
