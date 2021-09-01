@@ -26,4 +26,11 @@
         $user = $statement->fetch(PDO::FETCH_ASSOC);
     }
 
+    function adminPage($user)
+    {
+        if(!$user['is_admin']){
+            header('Location: index.php'); 
+        }
+    }
+
     return connect($host, $db, $user, $password);
