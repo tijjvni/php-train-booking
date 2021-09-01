@@ -5,6 +5,7 @@
     adminPage($user);
 
 ?>
+
 <form method="post" action="admin.php"> 
     <p> Add Location</p>
     <input type="text" placeholder="location" name="location"/>
