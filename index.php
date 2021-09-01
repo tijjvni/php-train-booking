@@ -1,2 +1,4 @@
 <?php
-    echo "Book your train ticket now";
+$pdo = require 'connect.php';
+
+var_dump($pdo);
