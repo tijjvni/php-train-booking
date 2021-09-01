@@ -4,7 +4,7 @@
     
     require_once('functions.php');
 
-    $user = authenticate();
+    $user = authenticate($pdo);
 ?>
     <a href="logout.php">logout</a>
 <?php

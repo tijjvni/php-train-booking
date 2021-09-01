@@ -1,6 +1,6 @@
 <?php     
      
-     function authenticate()
+     function authenticate($pdo)
      {
          if(!isset($_SESSION['user'])){
              header('Location: login.php'); 
