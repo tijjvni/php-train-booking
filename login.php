@@ -19,6 +19,7 @@
 
             $user = $stmt->fetch();
             
+            print_r($user);
 
             if ($user) {
                 $_SESSION['user'] = $email;
