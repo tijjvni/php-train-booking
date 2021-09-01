@@ -20,7 +20,7 @@
             
             if ($user) {
                 $_SESSION['user'] = $email;
-                header('Location: index.php'); 
+                echo "user not found.";
             } else {
                 echo "user not found.";
             }            
