@@ -1,7 +1,7 @@
 <?php
     $pdo = require 'connect.php';
 
-    // authenticate();
+    authenticate();
 
     // print_r($user);
-    echo 'tjyu';
+    echo 'tjyus';
