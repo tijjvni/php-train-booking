@@ -1,2 +1,2 @@
 <?php
-    echo "Book your train ticket";
+    echo "Book your train ticket now";
