@@ -19,6 +19,18 @@
         if(!isset($_SESSION['user'])){
             header('Location: login.php'); 
         }
+
+        $statement = $pdo->prepare($sql);
+        $statement->bindParam(':email', $_SESSION['user'], PDO::PARAM_INT);
+        $statement->execute();
+        $user = $statement->fetch(PDO::FETCH_ASSOC);
+    }
+
+    function adminPage($user)
+    {
+        if(!$user['is_admin']){
+            header('Location: index.php'); 
+        }
     }
 
     return connect($host, $db, $user, $password);
