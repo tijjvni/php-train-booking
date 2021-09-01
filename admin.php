@@ -96,7 +96,7 @@
 
             $statement = $pdo->prepare($sql);
               
-            $statement->execute(['from' => $email, 'to' => $to]);
+            $statement->execute(['from' => $from, 'to' => $to]);
 
 
 
