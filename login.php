@@ -20,7 +20,8 @@
             $user = $stmt->fetch();
             
             print_r($user);
-
+            die();
+            
             if ($user) {
                 $_SESSION['user'] = $email;
                 header('Location: index.php'); 
