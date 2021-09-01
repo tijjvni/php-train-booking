@@ -4,6 +4,6 @@
     
     require_once('functions.php');
 
-    authenticate();
-    
-    print_r($pdo);
+    // authenticate();
+
+    print_r($user);
