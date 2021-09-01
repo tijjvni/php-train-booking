@@ -25,7 +25,8 @@
             
             if ($user) {
                 $_SESSION['user'] = $email;
-                header('Location: index.php');
+                die('logged in');
+                header('Location: index.php'); 
             } else {
                 echo "user not found.";
             }            
