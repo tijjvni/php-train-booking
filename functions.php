@@ -7,13 +7,13 @@
          }
  
          
-
          $stmt = $pdo->prepare('SELECT * FROM users WHERE email = :email');
          $stmt->execute(['email' => $_SESSION['user'] ]);            
 
          $user = $stmt->fetch();   
          
          print_r($user);
-         return $user 
+
+         return $user;
 
      }
