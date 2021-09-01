@@ -21,14 +21,14 @@
 
             $user = $stmt->fetch();
             
-            print_r($user);
+            // print_r($user);
 
-            // if ($user) {
-            //     $_SESSION['user'] = $email;
-            //     echo "user not found.";
-            // } else {
-            //     echo "user not found.";
-            // }            
+            if ($user) {
+                $_SESSION['user'] = $email;
+                echo "user not found.";
+            } else {
+                echo "user not found.";
+            }            
 
 
         }
