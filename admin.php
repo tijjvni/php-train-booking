@@ -1,6 +1,6 @@
 <?php
-    $pdo = require_once 'connect.php';
-    require_once('functions.php');
+    $pdo = require 'connect.php';
+    require_once 'functions.php';
 
     $user = authenticate($pdo);
     adminPage($user);
@@ -42,12 +42,13 @@
         }else { 
 
             // insert coach
-            $sql = 'INSERT INTO coaches(name) VALUES(:name)';
+            $sql = 'INSERT INTO coaches(name, capacity) VALUES(:name, :capacity)';
 
             $statement = $pdo->prepare($sql);
 
             $statement->execute([
-                ':name' => $coach
+                ':name' => $coach, 
+                ':capacity' => $capacity
             ]);
 
 
