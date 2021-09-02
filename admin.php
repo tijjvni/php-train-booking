@@ -92,10 +92,8 @@
             echo "All fields are required";
         }else { 
            
-
-
             // insert route
-            $sql = 'INSERT INTO routes(from,to) VALUES(:from, :to)';
+            $sql = 'INSERT INTO routes(from, to) VALUES(:from, :to)';
 
             $statement = $pdo->prepare($sql);
 
@@ -155,7 +153,7 @@
 </form>
 <form method="post" action="admin.php"> 
     <p> Add Travel Time</p>
-    <input type="time" placeholder="Travel Time" name="time"/>
+    <input type="text" placeholder="Travel Time" name="time"/>
 
     <input type="submit" value="submit" name="addTime"/>
     
