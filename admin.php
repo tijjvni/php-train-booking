@@ -37,7 +37,7 @@
         extract($_POST);
 
         // process add coach
-        if(empty($coach)){
+        if(empty($coach) || empty($capacity)){
             echo "All fields are required";
         }else { 
 
@@ -91,19 +91,18 @@
         if(empty($to) || empty($from)){
             echo "All fields are required";
         }else { 
+           
 
-            
 
             // insert route
-            $sql = 'INSERT INTO routes(from,to) VALUES(:from,:to)';
+            $sql = 'INSERT INTO routes(from,to) VALUES(:from, :to)';
 
             $statement = $pdo->prepare($sql);
+
             $statement->execute([
                 ':from' => $from, 
                 ':to' => $to
-            ]);            
-
-            die($statement);              
+            ]);
 
             echo 'Route added successfully.';            
 
@@ -144,13 +143,6 @@
     <input type="text" placeholder="location" name="location"/>
 
     <input type="submit" value="submit" name="addLocation"/>
-    
-</form>
-<form method="post" action="admin.php"> 
-    <p> Add Time</p>
-    <input type="text" placeholder="time" name="time"/>
-
-    <input type="submit" value="submit" name="addTime"/>
     
 </form>
 <form method="post" action="admin.php"> 
