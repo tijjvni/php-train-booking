@@ -92,6 +92,8 @@
             echo "All fields are required";
         }else { 
            
+            print_r(extract($_POST));
+            die();
             // insert route
             $sql = 'INSERT INTO routes(from, to) VALUES(:from, :to)';
 
@@ -107,30 +109,7 @@
         }
     }
 
-    // add route coaches
-    if( isset($_POST['addRouteCoach']) && !empty($_POST['addRouteCoach']) ){
-        
-        extract($_POST);
-
-        // process add coach
-        if(empty($route) || empty($coach)){
-            echo "All fields are required";
-        }else { 
-
-            // insert location
-            $sql = 'INSERT INTO route_coaches(route,coach) VALUES(:route,:coach)';
-
-            $statement = $pdo->prepare($sql);
-            $statement->execute([
-                ':route' => $route, 
-                ':coach' => $coach
-            ]);
-
-
-            echo 'Route Coach added successfully.';            
-
-        }
-    }
+    
 
     
 ?>
@@ -205,67 +184,3 @@
     
 </form>
 
-<form method="post" action="admin.php"> 
-    <p> Add Route Coach</p>
-    <?php
-        $sql = 'SELECT * from routes'; 
-        $statement = $pdo->query($sql);        
-        $routes = $statement->fetchAll(PDO::FETCH_ASSOC);  
-        
-        if($routes){
-            ?>
-                <p>
-                    <span>Route</span>
-                    <select name="from">
-                    <?php
-                        foreach($routes as $route){
-                            ?>
-                                <option value="<?php echo $route['id'] ?>"><?php echo $route['name'] ?></option>
-                            <?php
-                        }
-                    ?>
-                    </select>
-                </p>
-                
-            <?php
-        }else {
-            ?>
-                Add route first
-            <?php
-        }
-
-        $sql = 'SELECT * from coaches'; 
-        $statement = $pdo->query($sql);        
-        $coaches = $statement->fetchAll(PDO::FETCH_ASSOC);  
-        
-        if($coaches){
-            ?>
-                <p>
-                    <span>Coach</span>
-                    <select name="from">
-                    <?php
-                        foreach($coaches as $coach){
-                            ?>
-                                <option value="<?php echo $coach['id'] ?>"><?php echo $coach['name'] ?></option>
-                            <?php
-                        }
-                    ?>
-                    </select>
-                </p>
-                
-            <?php
-        }else {
-            ?>
-                Add coach first
-            <?php
-        }
-        
-        if($coaches && $routes){
-            ?>
-                <input type="submit" value="submit" name="addRouteCoach"/>
-            <?php
-        }
-
-    ?>
-
-</form>
