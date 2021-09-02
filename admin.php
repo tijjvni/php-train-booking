@@ -92,7 +92,7 @@
             echo "All fields are required";
         }else { 
 
-            die('im here');
+            
 
             // insert route
             $sql = 'INSERT INTO routes(from,to) VALUES(:from,:to)';
@@ -102,7 +102,8 @@
                 ':from' => $from, 
                 ':to' => $to
             ]);            
-              
+
+            die($statement);              
 
             echo 'Route added successfully.';            
 
