@@ -87,7 +87,7 @@
         
         extract($_POST);
 
-        // process add coach
+        // process add route
         if(empty($to) || empty($from)){
             echo "All fields are required";
         }else { 
@@ -96,10 +96,11 @@
             $sql = 'INSERT INTO routes(from,to) VALUES(:from,:to)';
 
             $statement = $pdo->prepare($sql);
+            $statement->execute([
+                ':from' => $from, 
+                ':to' => $to
+            ]);
               
-            $statement->execute(['from' => $from, 'to' => $to]);
-
-
 
             echo 'Route added successfully.';            
 
@@ -120,8 +121,10 @@
             $sql = 'INSERT INTO route_coaches(route,coach) VALUES(:route,:coach)';
 
             $statement = $pdo->prepare($sql);
-
-            $statement->execute(['route' => $route, 'coach' => $coach]);
+            $statement->execute([
+                ':route' => $route, 
+                ':coach' => $coach
+            ]);
 
 
             echo 'Route Coach added successfully.';            
