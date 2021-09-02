@@ -96,7 +96,6 @@
             // insert route
             $pdo->query('INSERT INTO routes(from, to) VALUES('.$from.', '.$to.')');
 
-
             echo 'Route added successfully.';            
 
         }

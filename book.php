@@ -170,7 +170,7 @@
                     $statement = $pdo->query($sql);        
                     $times = $statement->fetchAll(PDO::FETCH_ASSOC);  
                     
-                    if($routes && $coaches && $time){
+                    if($routes && $coaches && $times){
                         
                         ?>
                         <p>
