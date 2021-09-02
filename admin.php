@@ -92,13 +92,13 @@
             echo "All fields are required";
         }else { 
            
-            print_r($to.' '.$from);
-            die();
+
             // insert route
             $sql = 'INSERT INTO routes(from, to) VALUES(:from, :to)';
 
             $statement = $pdo->prepare($sql);
-
+            print_r($from.' '.$to);
+            die();
             $statement->execute([
                 ':from' => $from, 
                 ':to' => $to
