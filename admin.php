@@ -94,12 +94,8 @@
            
 
             // insert route
-            $sql = 'INSERT INTO routes(from, to) VALUES(?,?)';
+            $pdo->query('INSERT INTO routes(from, to) VALUES('.$from.', '.$to.')');
 
-            $statement = $pdo->prepare($sql);
-            print_r($from.' '.$to);
-            die();
-            $statement->execute([$from, $to]);
 
             echo 'Route added successfully.';            
 
