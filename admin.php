@@ -92,7 +92,7 @@
             echo "All fields are required";
         }else { 
            
-            print_r(extract($_POST));
+            print_r($to.' '.$from);
             die();
             // insert route
             $sql = 'INSERT INTO routes(from, to) VALUES(:from, :to)';
